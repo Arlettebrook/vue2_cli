@@ -14,11 +14,18 @@
 
     <script type="text/javascript">
         let p = {name:'张三',age:18}
+        let c = {id:'0001',title:'吃饭',done:false}
+        let a = {id:'0002',title:'睡觉',done:true}
+        let b = {id:'0003',title:'喝酒',done:false}
         console.log('直接存对象,会默认调toString方法',p.toString())//直接存对象，会默认调toString方法
         function saveData(){
             localStorage.setItem('msg','hello!')
             localStorage.setItem('msg2',666)
             localStorage.setItem('person',JSON.stringify(p))
+            localStorage.setItem('person',JSON.stringify(a))
+            localStorage.setItem('person',JSON.stringify(b))
+            localStorage.setItem('person',JSON.stringify(c))
+            //会背覆盖
 
         }
         function readData(){
