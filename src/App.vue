@@ -1,29 +1,36 @@
 <template>
 	<div>
-		<MyTest/>
-		<hr/>
-		<MyTest2/>
-		<hr/>
-		<MyTest3/>
-		<hr/>
-		<MyTest4/>
+		<button @click="getStudents">获取学生信息</button><br/>
+		<button @click="getCars">获汽车信息</button>
 	</div>
 </template>
 
 <script>
-	import MyTest from "./components/MyTest"
-	import MyTest2 from "./components/MyTest2"
-	import MyTest3 from "./components/MyTest3"
-	import MyTest4 from "./components/MyTest4"
-	
+	import axios from 'axios'
+
 	export default {
 		name:'App',
-		components:{MyTest,MyTest2,MyTest3,MyTest4},
-		
+		methods:{
+			getStudents(){
+				axios.get('http://localhost:8080/baidu/students').then(
+					response => {
+						console.log('请求成功了！',response.data)
+					},
+					error => {
+						console.log('请求失败了！',error.message)
+					}
+				)
+			},
+			getCars(){
+				axios.get('http://localhost:8080/demo/cars').then(
+					response => {
+						console.log('请求成功了：',response.data)
+					},
+					error => {
+						console.log('请求失败了：',error.message)
+					}
+				)
+			}
+		}
 	}
 </script>
-
-<!-- App.vue里面一般不要写scoped：最终的样式会被汇总到一起，重名的样式，不写会被覆盖 -->
-<style scoped>
-
-</style>
