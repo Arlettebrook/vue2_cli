@@ -46,6 +46,8 @@ export default {
             // this.isFirst = dataObj.isFirst
             // this.info = dataObj
             // 防止isFalse丢失
+            // ...对象：是对象展开操作符
+            // {obj,obj}：对象合并操作符,会覆盖第一个对象的属性，没有的会保留
             this.info = {...this.info,...dataObj}
         })
     }
