@@ -16,6 +16,8 @@
             <!-- 缓存路由组件，切换不让它销毁 
                 属性include包括那个组件，没有默认全部
                 值是组件名，不是路由组件的name属性
+                 要包括多个的时候用数组
+                include="['News','Messgae']"
             -->
             <keep-alive include="News">
                 <router-view/>
